@@ -16,7 +16,7 @@ class Net {
 
     // MARK: - urls
 
-    private let baseUrl: String = "ringtones-kodi.s3.amazonaws.com"
+    private let baseUrl: String = "https://ringtones-kodi.s3.amazonaws.com/"
 
     // MARK: - alamofire
 

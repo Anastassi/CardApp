@@ -34,6 +34,10 @@ class BaseViewController: UIViewController {
         }
     }
 
+    // MARK: - life cycle variables
+
+    private(set) var isViewDidAppeared: Bool = false
+
     // MARK: - gui variables
 
     private var mainViewBottomConstraint: Constraint?
@@ -58,10 +62,17 @@ class BaseViewController: UIViewController {
 
         self.navigationController?.navigationBar.isHidden = !self.showNavBar
 
+        if !self.isViewDidAppeared {
+            self.isViewDidAppeared = true
+            self.singleDidAppear()
+        }
+
         if self.parent is UINavigationController {
             self.showTabBar ? Interface.sh.navController.showTabBar() : Interface.sh.navController.hideTabBar()
         }
     }
+
+    func singleDidAppear() {}
 
     // MARK: - initialization
 
