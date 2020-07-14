@@ -14,5 +14,4 @@ class FriendsController: BaseViewController {
 
         self.controllerTitle = "Friends"
     }
-    
 }

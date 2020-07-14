@@ -31,6 +31,11 @@
 		03018CD124BE62F600A87C49 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CD024BE62F600A87C49 /* UserDefaultsKey.swift */; };
 		03018CD324BE63AB00A87C49 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CD224BE63AB00A87C49 /* OnboardingController.swift */; };
 		03018CD624BE64D000A87C49 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CD524BE64D000A87C49 /* BaseButton.swift */; };
+		03018CD824BE6F1B00A87C49 /* Net.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CD724BE6F1B00A87C49 /* Net.swift */; };
+		03018CDA24BE700700A87C49 /* NetError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CD924BE700700A87C49 /* NetError.swift */; };
+		03018CDC24BE712F00A87C49 /* NetUrlPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CDB24BE712F00A87C49 /* NetUrlPath.swift */; };
+		03018CDE24BE722D00A87C49 /* URL+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CDD24BE722D00A87C49 /* URL+Ex.swift */; };
+		03018CE024BE728500A87C49 /* Encodable+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CDF24BE728500A87C49 /* Encodable+Ex.swift */; };
 		6E1F0D9068EFCB92A87F877F /* Pods_CardApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30823ED1F564E7BEE8D242C2 /* Pods_CardApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +66,11 @@
 		03018CD024BE62F600A87C49 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		03018CD224BE63AB00A87C49 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		03018CD524BE64D000A87C49 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		03018CD724BE6F1B00A87C49 /* Net.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Net.swift; sourceTree = "<group>"; };
+		03018CD924BE700700A87C49 /* NetError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetError.swift; sourceTree = "<group>"; };
+		03018CDB24BE712F00A87C49 /* NetUrlPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetUrlPath.swift; sourceTree = "<group>"; };
+		03018CDD24BE722D00A87C49 /* URL+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Ex.swift"; sourceTree = "<group>"; };
+		03018CDF24BE728500A87C49 /* Encodable+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Ex.swift"; sourceTree = "<group>"; };
 		30823ED1F564E7BEE8D242C2 /* Pods_CardApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3CEB37427FB0D2A08EFFE1D /* Pods-CardApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardApp.debug.xcconfig"; path = "Target Support Files/Pods-CardApp/Pods-CardApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DC5B1AAF35286820A7F6C17A /* Pods-CardApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardApp.release.xcconfig"; path = "Target Support Files/Pods-CardApp/Pods-CardApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +144,8 @@
 			children = (
 				03018CAF24BE47F000A87C49 /* Array+Ex.swift */,
 				03018CB124BE495F00A87C49 /* UIView+Ex.swift */,
+				03018CDD24BE722D00A87C49 /* URL+Ex.swift */,
+				03018CDF24BE728500A87C49 /* Encodable+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -141,6 +153,9 @@
 		03018C9424BE39BE00A87C49 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				03018CD724BE6F1B00A87C49 /* Net.swift */,
+				03018CDB24BE712F00A87C49 /* NetUrlPath.swift */,
+				03018CD924BE700700A87C49 /* NetError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -485,11 +500,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03018CDE24BE722D00A87C49 /* URL+Ex.swift in Sources */,
 				03018CC924BE518300A87C49 /* SettingsController.swift in Sources */,
 				03018CC724BE515700A87C49 /* FriendsController.swift in Sources */,
 				03018C8124BE363300A87C49 /* BaseViewController.swift in Sources */,
 				03018CAB24BE453200A87C49 /* TabBarView.swift in Sources */,
 				03018CD124BE62F600A87C49 /* UserDefaultsKey.swift in Sources */,
+				03018CE024BE728500A87C49 /* Encodable+Ex.swift in Sources */,
 				03018CB024BE47F000A87C49 /* Array+Ex.swift in Sources */,
 				03018CA024BE3D0600A87C49 /* TabBarController.swift in Sources */,
 				03018CA724BE3EF900A87C49 /* TabBarCell.swift in Sources */,
@@ -502,9 +519,12 @@
 				03018C7D24BE363300A87C49 /* AppDelegate.swift in Sources */,
 				03018CBA24BE4FEC00A87C49 /* CardController.swift in Sources */,
 				03018CD624BE64D000A87C49 /* BaseButton.swift in Sources */,
+				03018CD824BE6F1B00A87C49 /* Net.swift in Sources */,
+				03018CDA24BE700700A87C49 /* NetError.swift in Sources */,
 				03018C9C24BE3A7A00A87C49 /* Interface.swift in Sources */,
 				03018CD324BE63AB00A87C49 /* OnboardingController.swift in Sources */,
 				03018CC324BE507300A87C49 /* BookmarkController.swift in Sources */,
+				03018CDC24BE712F00A87C49 /* NetUrlPath.swift in Sources */,
 				03018CB224BE495F00A87C49 /* UIView+Ex.swift in Sources */,
 				03018CBD24BE500D00A87C49 /* InfoController.swift in Sources */,
 			);
