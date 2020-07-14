@@ -18,27 +18,27 @@ class TabBarController: UINavigationController {
 
     private(set) lazy var tabBarView: TabBarView = {
         let view = TabBarView()
-//        view.isHidden = true
+        view.isHidden = true
 
         return view
     }()
 
     // MARK: - life cycle
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.view.addSubview(self.tabBarView)
+        self.tabBarView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview().inset(self.tabBarInsets)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(self.tabBarInsets)
+        }
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         self.navigationBar.isHidden = true
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        self.view.addSubview(self.tabBarView)
-        self.tabBarView.snp.remakeConstraints { (make) in
-            make.left.right.equalToSuperview().inset(self.tabBarInsets)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(self.tabBarInsets)
-        }
     }
 
     // MARK: - tabBar
@@ -49,7 +49,8 @@ class TabBarController: UINavigationController {
         self.isTabBarAnimating = true
         self.tabBarView.isHidden = false
         self.tabBarView.snp.remakeConstraints { (make) in
-            make.left.right.bottom.equalToSuperview().inset(self.tabBarInsets)
+            make.left.right.equalToSuperview().inset(self.tabBarInsets)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(self.tabBarInsets)
         }
 
         UIView.animate(withDuration: self.tabBarAnimationDuration, animations: {

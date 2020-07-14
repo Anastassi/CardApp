@@ -26,7 +26,7 @@ class TabBarView: BaseView, UICollectionViewDelegate, UICollectionViewDataSource
     var tabbarTintColor: UIColor = .red
     var uselectedItemTintColor: UIColor?
 
-    private let tabBarHeight: CGFloat = 56
+    let tabBarHeight: CGFloat = 56
     private let containerCornerRadius: CGFloat = 28
 
     // MARK: - collection parameters

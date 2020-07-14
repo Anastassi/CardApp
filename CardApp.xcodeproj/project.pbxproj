@@ -26,6 +26,11 @@
 		03018CC324BE507300A87C49 /* BookmarkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CC224BE507300A87C49 /* BookmarkController.swift */; };
 		03018CC724BE515700A87C49 /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CC624BE515700A87C49 /* FriendsController.swift */; };
 		03018CC924BE518300A87C49 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CC824BE518300A87C49 /* SettingsController.swift */; };
+		03018CCB24BE61CA00A87C49 /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CCA24BE61CA00A87C49 /* DefaultsManager.swift */; };
+		03018CCD24BE625100A87C49 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CCC24BE625100A87C49 /* UserDefaultsWrapper.swift */; };
+		03018CD124BE62F600A87C49 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CD024BE62F600A87C49 /* UserDefaultsKey.swift */; };
+		03018CD324BE63AB00A87C49 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CD224BE63AB00A87C49 /* OnboardingController.swift */; };
+		03018CD624BE64D000A87C49 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CD524BE64D000A87C49 /* BaseButton.swift */; };
 		6E1F0D9068EFCB92A87F877F /* Pods_CardApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30823ED1F564E7BEE8D242C2 /* Pods_CardApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +56,11 @@
 		03018CC224BE507300A87C49 /* BookmarkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkController.swift; sourceTree = "<group>"; };
 		03018CC624BE515700A87C49 /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
 		03018CC824BE518300A87C49 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		03018CCA24BE61CA00A87C49 /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
+		03018CCC24BE625100A87C49 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		03018CD024BE62F600A87C49 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		03018CD224BE63AB00A87C49 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
+		03018CD524BE64D000A87C49 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		30823ED1F564E7BEE8D242C2 /* Pods_CardApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3CEB37427FB0D2A08EFFE1D /* Pods-CardApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardApp.debug.xcconfig"; path = "Target Support Files/Pods-CardApp/Pods-CardApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DC5B1AAF35286820A7F6C17A /* Pods-CardApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardApp.release.xcconfig"; path = "Target Support Files/Pods-CardApp/Pods-CardApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +148,9 @@
 		03018C9524BE39C400A87C49 /* Defaults */ = {
 			isa = PBXGroup;
 			children = (
+				03018CCA24BE61CA00A87C49 /* DefaultsManager.swift */,
+				03018CCC24BE625100A87C49 /* UserDefaultsWrapper.swift */,
+				03018CD024BE62F600A87C49 /* UserDefaultsKey.swift */,
 			);
 			path = Defaults;
 			sourceTree = "<group>";
@@ -163,6 +176,7 @@
 		03018C9824BE3A0A00A87C49 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				03018CD424BE649600A87C49 /* Button */,
 				03018CA324BE3E9000A87C49 /* TabBar */,
 			);
 			path = Controls;
@@ -198,6 +212,7 @@
 		03018C9E24BE3BCC00A87C49 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				03018CD224BE63AB00A87C49 /* OnboardingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -311,6 +326,14 @@
 				03018CC624BE515700A87C49 /* FriendsController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		03018CD424BE649600A87C49 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				03018CD524BE64D000A87C49 /* BaseButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		1F2007955F8B39A4743852F0 /* Frameworks */ = {
@@ -466,16 +489,21 @@
 				03018CC724BE515700A87C49 /* FriendsController.swift in Sources */,
 				03018C8124BE363300A87C49 /* BaseViewController.swift in Sources */,
 				03018CAB24BE453200A87C49 /* TabBarView.swift in Sources */,
+				03018CD124BE62F600A87C49 /* UserDefaultsKey.swift in Sources */,
 				03018CB024BE47F000A87C49 /* Array+Ex.swift in Sources */,
 				03018CA024BE3D0600A87C49 /* TabBarController.swift in Sources */,
 				03018CA724BE3EF900A87C49 /* TabBarCell.swift in Sources */,
+				03018CCB24BE61CA00A87C49 /* DefaultsManager.swift in Sources */,
+				03018CCD24BE625100A87C49 /* UserDefaultsWrapper.swift in Sources */,
 				03018CA524BE3EA100A87C49 /* TabBarTabType.swift in Sources */,
 				03018CB424BE4F5900A87C49 /* MainTabBarController.swift in Sources */,
 				03018CA924BE3F8400A87C49 /* TabBarCellModel.swift in Sources */,
 				03018CAE24BE45FE00A87C49 /* BaseView.swift in Sources */,
 				03018C7D24BE363300A87C49 /* AppDelegate.swift in Sources */,
 				03018CBA24BE4FEC00A87C49 /* CardController.swift in Sources */,
+				03018CD624BE64D000A87C49 /* BaseButton.swift in Sources */,
 				03018C9C24BE3A7A00A87C49 /* Interface.swift in Sources */,
+				03018CD324BE63AB00A87C49 /* OnboardingController.swift in Sources */,
 				03018CC324BE507300A87C49 /* BookmarkController.swift in Sources */,
 				03018CB224BE495F00A87C49 /* UIView+Ex.swift in Sources */,
 				03018CBD24BE500D00A87C49 /* InfoController.swift in Sources */,

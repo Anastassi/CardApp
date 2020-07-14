@@ -31,7 +31,11 @@ class Interface {
         self.setUpNavigationBarStyle()
 
         window.rootViewController = self.navController
-        self.setVC(MainTabBarController())
+        if DefaultsManager.didPassOnboarding {
+            self.setVC(MainTabBarController())
+        } else {
+            self.setVC(OnboardingController())
+        }
 
         window.makeKeyAndVisible()
     }
