@@ -8,19 +8,49 @@
 
 /* Begin PBXBuildFile section */
 		03018C7D24BE363300A87C49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018C7C24BE363300A87C49 /* AppDelegate.swift */; };
-		03018C8124BE363300A87C49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018C8024BE363300A87C49 /* ViewController.swift */; };
+		03018C8124BE363300A87C49 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018C8024BE363300A87C49 /* BaseViewController.swift */; };
 		03018C8624BE363500A87C49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03018C8524BE363500A87C49 /* Assets.xcassets */; };
 		03018C8924BE363500A87C49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03018C8724BE363500A87C49 /* LaunchScreen.storyboard */; };
+		03018C9C24BE3A7A00A87C49 /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018C9B24BE3A7A00A87C49 /* Interface.swift */; };
+		03018CA024BE3D0600A87C49 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018C9F24BE3D0600A87C49 /* TabBarController.swift */; };
+		03018CA524BE3EA100A87C49 /* TabBarTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CA424BE3EA100A87C49 /* TabBarTabType.swift */; };
+		03018CA724BE3EF900A87C49 /* TabBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CA624BE3EF900A87C49 /* TabBarCell.swift */; };
+		03018CA924BE3F8400A87C49 /* TabBarCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CA824BE3F8400A87C49 /* TabBarCellModel.swift */; };
+		03018CAB24BE453200A87C49 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CAA24BE453200A87C49 /* TabBarView.swift */; };
+		03018CAE24BE45FE00A87C49 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CAD24BE45FE00A87C49 /* BaseView.swift */; };
+		03018CB024BE47F000A87C49 /* Array+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CAF24BE47F000A87C49 /* Array+Ex.swift */; };
+		03018CB224BE495F00A87C49 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CB124BE495F00A87C49 /* UIView+Ex.swift */; };
+		03018CB424BE4F5900A87C49 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CB324BE4F5900A87C49 /* MainTabBarController.swift */; };
+		03018CBA24BE4FEC00A87C49 /* CardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CB924BE4FEC00A87C49 /* CardController.swift */; };
+		03018CBD24BE500D00A87C49 /* InfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CBC24BE500D00A87C49 /* InfoController.swift */; };
+		03018CC324BE507300A87C49 /* BookmarkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CC224BE507300A87C49 /* BookmarkController.swift */; };
+		03018CC724BE515700A87C49 /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CC624BE515700A87C49 /* FriendsController.swift */; };
+		03018CC924BE518300A87C49 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CC824BE518300A87C49 /* SettingsController.swift */; };
 		6E1F0D9068EFCB92A87F877F /* Pods_CardApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30823ED1F564E7BEE8D242C2 /* Pods_CardApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		03018C7924BE363300A87C49 /* CardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03018C7C24BE363300A87C49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		03018C8024BE363300A87C49 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		03018C8024BE363300A87C49 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		03018C8524BE363500A87C49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03018C8824BE363500A87C49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03018C8A24BE363500A87C49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03018C9B24BE3A7A00A87C49 /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
+		03018C9F24BE3D0600A87C49 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		03018CA424BE3EA100A87C49 /* TabBarTabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTabType.swift; sourceTree = "<group>"; };
+		03018CA624BE3EF900A87C49 /* TabBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCell.swift; sourceTree = "<group>"; };
+		03018CA824BE3F8400A87C49 /* TabBarCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCellModel.swift; sourceTree = "<group>"; };
+		03018CAA24BE453200A87C49 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		03018CAD24BE45FE00A87C49 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		03018CAF24BE47F000A87C49 /* Array+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ex.swift"; sourceTree = "<group>"; };
+		03018CB124BE495F00A87C49 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
+		03018CB324BE4F5900A87C49 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		03018CB924BE4FEC00A87C49 /* CardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardController.swift; sourceTree = "<group>"; };
+		03018CBC24BE500D00A87C49 /* InfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoController.swift; sourceTree = "<group>"; };
+		03018CC224BE507300A87C49 /* BookmarkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkController.swift; sourceTree = "<group>"; };
+		03018CC624BE515700A87C49 /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
+		03018CC824BE518300A87C49 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		30823ED1F564E7BEE8D242C2 /* Pods_CardApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3CEB37427FB0D2A08EFFE1D /* Pods-CardApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardApp.debug.xcconfig"; path = "Target Support Files/Pods-CardApp/Pods-CardApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DC5B1AAF35286820A7F6C17A /* Pods-CardApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardApp.release.xcconfig"; path = "Target Support Files/Pods-CardApp/Pods-CardApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -62,8 +92,8 @@
 				03018C7C24BE363300A87C49 /* AppDelegate.swift */,
 				03018C8A24BE363500A87C49 /* Info.plist */,
 				03018C9224BE397B00A87C49 /* Common */,
-				03018C9324BE398600A87C49 /* Extensions */,
 				03018C9124BE396F00A87C49 /* Features */,
+				03018C9324BE398600A87C49 /* Extensions */,
 				03018C9A24BE3A1700A87C49 /* Resources */,
 			);
 			path = CardApp;
@@ -72,6 +102,8 @@
 		03018C9124BE396F00A87C49 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				03018CB524BE4FC900A87C49 /* Main */,
+				03018C9D24BE3BC500A87C49 /* Onboarding */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -90,6 +122,8 @@
 		03018C9324BE398600A87C49 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				03018CAF24BE47F000A87C49 /* Array+Ex.swift */,
+				03018CB124BE495F00A87C49 /* UIView+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -111,6 +145,7 @@
 		03018C9624BE39E400A87C49 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				03018C9B24BE3A7A00A87C49 /* Interface.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -118,6 +153,7 @@
 		03018C9724BE39F700A87C49 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				03018CAC24BE45F100A87C49 /* Views */,
 				03018C9924BE3A0E00A87C49 /* Controllers */,
 				03018C9824BE3A0A00A87C49 /* Controls */,
 			);
@@ -127,6 +163,7 @@
 		03018C9824BE3A0A00A87C49 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				03018CA324BE3E9000A87C49 /* TabBar */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -134,7 +171,9 @@
 		03018C9924BE3A0E00A87C49 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				03018C8024BE363300A87C49 /* ViewController.swift */,
+				03018C8024BE363300A87C49 /* BaseViewController.swift */,
+				03018C9F24BE3D0600A87C49 /* TabBarController.swift */,
+				03018CB324BE4F5900A87C49 /* MainTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -146,6 +185,132 @@
 				03018C8724BE363500A87C49 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		03018C9D24BE3BC500A87C49 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				03018C9E24BE3BCC00A87C49 /* Controller */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		03018C9E24BE3BCC00A87C49 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		03018CA324BE3E9000A87C49 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				03018CA424BE3EA100A87C49 /* TabBarTabType.swift */,
+				03018CA624BE3EF900A87C49 /* TabBarCell.swift */,
+				03018CAA24BE453200A87C49 /* TabBarView.swift */,
+				03018CA824BE3F8400A87C49 /* TabBarCellModel.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		03018CAC24BE45F100A87C49 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				03018CAD24BE45FE00A87C49 /* BaseView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		03018CB524BE4FC900A87C49 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				03018CB624BE4FCF00A87C49 /* Cards */,
+				03018CB724BE4FD700A87C49 /* Info */,
+				03018CBE24BE502600A87C49 /* Bookmark */,
+				03018CBF24BE503000A87C49 /* Settings */,
+				03018CC024BE503500A87C49 /* Friends */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		03018CB624BE4FCF00A87C49 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				03018CB824BE4FE200A87C49 /* Controller */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		03018CB724BE4FD700A87C49 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				03018CBB24BE500300A87C49 /* Controller */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		03018CB824BE4FE200A87C49 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03018CB924BE4FEC00A87C49 /* CardController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		03018CBB24BE500300A87C49 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03018CBC24BE500D00A87C49 /* InfoController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		03018CBE24BE502600A87C49 /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				03018CC124BE503C00A87C49 /* Controller */,
+			);
+			path = Bookmark;
+			sourceTree = "<group>";
+		};
+		03018CBF24BE503000A87C49 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				03018CC424BE514600A87C49 /* Controller */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		03018CC024BE503500A87C49 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				03018CC524BE514C00A87C49 /* Controller */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		03018CC124BE503C00A87C49 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03018CC224BE507300A87C49 /* BookmarkController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		03018CC424BE514600A87C49 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03018CC824BE518300A87C49 /* SettingsController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		03018CC524BE514C00A87C49 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03018CC624BE515700A87C49 /* FriendsController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		1F2007955F8B39A4743852F0 /* Frameworks */ = {
@@ -297,8 +462,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03018C8124BE363300A87C49 /* ViewController.swift in Sources */,
+				03018CC924BE518300A87C49 /* SettingsController.swift in Sources */,
+				03018CC724BE515700A87C49 /* FriendsController.swift in Sources */,
+				03018C8124BE363300A87C49 /* BaseViewController.swift in Sources */,
+				03018CAB24BE453200A87C49 /* TabBarView.swift in Sources */,
+				03018CB024BE47F000A87C49 /* Array+Ex.swift in Sources */,
+				03018CA024BE3D0600A87C49 /* TabBarController.swift in Sources */,
+				03018CA724BE3EF900A87C49 /* TabBarCell.swift in Sources */,
+				03018CA524BE3EA100A87C49 /* TabBarTabType.swift in Sources */,
+				03018CB424BE4F5900A87C49 /* MainTabBarController.swift in Sources */,
+				03018CA924BE3F8400A87C49 /* TabBarCellModel.swift in Sources */,
+				03018CAE24BE45FE00A87C49 /* BaseView.swift in Sources */,
 				03018C7D24BE363300A87C49 /* AppDelegate.swift in Sources */,
+				03018CBA24BE4FEC00A87C49 /* CardController.swift in Sources */,
+				03018C9C24BE3A7A00A87C49 /* Interface.swift in Sources */,
+				03018CC324BE507300A87C49 /* BookmarkController.swift in Sources */,
+				03018CB224BE495F00A87C49 /* UIView+Ex.swift in Sources */,
+				03018CBD24BE500D00A87C49 /* InfoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
