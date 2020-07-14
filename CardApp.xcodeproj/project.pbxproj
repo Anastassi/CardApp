@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03018C7D24BE363300A87C49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018C7C24BE363300A87C49 /* AppDelegate.swift */; };
-		03018C7F24BE363300A87C49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018C7E24BE363300A87C49 /* SceneDelegate.swift */; };
 		03018C8124BE363300A87C49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018C8024BE363300A87C49 /* ViewController.swift */; };
-		03018C8424BE363300A87C49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03018C8224BE363300A87C49 /* Main.storyboard */; };
 		03018C8624BE363500A87C49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03018C8524BE363500A87C49 /* Assets.xcassets */; };
 		03018C8924BE363500A87C49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03018C8724BE363500A87C49 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,9 +16,7 @@
 /* Begin PBXFileReference section */
 		03018C7924BE363300A87C49 /* CardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03018C7C24BE363300A87C49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		03018C7E24BE363300A87C49 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		03018C8024BE363300A87C49 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		03018C8324BE363300A87C49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03018C8524BE363500A87C49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03018C8824BE363500A87C49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03018C8A24BE363500A87C49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,9 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				03018C7C24BE363300A87C49 /* AppDelegate.swift */,
-				03018C7E24BE363300A87C49 /* SceneDelegate.swift */,
 				03018C8024BE363300A87C49 /* ViewController.swift */,
-				03018C8224BE363300A87C49 /* Main.storyboard */,
 				03018C8524BE363500A87C49 /* Assets.xcassets */,
 				03018C8724BE363500A87C49 /* LaunchScreen.storyboard */,
 				03018C8A24BE363500A87C49 /* Info.plist */,
@@ -77,6 +71,7 @@
 				03018C7524BE363300A87C49 /* Sources */,
 				03018C7624BE363300A87C49 /* Frameworks */,
 				03018C7724BE363300A87C49 /* Resources */,
+				03018C9024BE37D800A87C49 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -126,11 +121,31 @@
 			files = (
 				03018C8924BE363500A87C49 /* LaunchScreen.storyboard in Resources */,
 				03018C8624BE363500A87C49 /* Assets.xcassets in Resources */,
-				03018C8424BE363300A87C49 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03018C9024BE37D800A87C49 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\necho \"SwiftLint started:\"\nswiftlint\nelse\necho \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n#echo \"SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\nexit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		03018C7524BE363300A87C49 /* Sources */ = {
@@ -139,21 +154,12 @@
 			files = (
 				03018C8124BE363300A87C49 /* ViewController.swift in Sources */,
 				03018C7D24BE363300A87C49 /* AppDelegate.swift in Sources */,
-				03018C7F24BE363300A87C49 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		03018C8224BE363300A87C49 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				03018C8324BE363300A87C49 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		03018C8724BE363500A87C49 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -290,10 +296,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = by.korneeva.CardApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,10 +315,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = by.korneeva.CardApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
