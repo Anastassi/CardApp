@@ -1,20 +1,33 @@
 PODS:
   - Alamofire (5.2.1)
+  - AlamofireImage (4.1.0):
+    - Alamofire (~> 5.1)
+  - InfiniteLayout (0.4.2):
+    - InfiniteLayout/Core (= 0.4.2)
+  - InfiniteLayout/CocoaProxy (0.4.2)
+  - InfiniteLayout/Core (0.4.2):
+    - InfiniteLayout/CocoaProxy
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0)
+  - AlamofireImage (~> 4.1)
+  - InfiniteLayout
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AlamofireImage
+    - InfiniteLayout
     - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
+  InfiniteLayout: de51cfad9ed480a3e3a0af7d28242d3257c606d9
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 9db6e06f0cbb807246a9d9b4d6acdbfcab9285c3
+PODFILE CHECKSUM: e514f411abebddaaad9161b04be6e8b1206416c5
 
 COCOAPODS: 1.9.3

@@ -29,7 +29,7 @@ class Net {
     // MARK: - requests
 
     func request<T: Decodable>(urlPath: String,
-                               reqModel: Encodable?,
+                               reqModel: Encodable? = nil,
                                httpMethod: HTTPMethod? = nil,
                                headers: [String: String]? = nil,
                                urlParams: [String: String]? = nil,
