@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxCocoa
 
 class InfoController: BaseViewController {
 
@@ -17,10 +18,11 @@ class InfoController: BaseViewController {
         let label = UILabel()
         label.font = .systemFont(ofSize: 25)
         label.textAlignment = .center
-        label.text = "Selected Item Title"
 
         return label
     }()
+
+    // MARK: - initialization
 
     override func initController() {
         super.initController()
@@ -33,5 +35,19 @@ class InfoController: BaseViewController {
             make.left.right.equalToSuperview().inset(self.edgeInsets)
             make.centerY.equalTo(self.view.snp.centerY)
         }
+    }
+
+     // MARK: - binding
+
+    func bindViewModel(_ viewModel: CardCollectionViewModel) {
+        viewModel.selectedRingtone
+            .asObservable()
+            .map { (ringtone) -> String in
+                if let ringtone = ringtone {
+                    return ringtone.title
+                } else { return "" }
+            }
+            .bind(to: self.selectedTitle.rx.text)
+            .disposed(by: self.disposeBag)
     }
 }

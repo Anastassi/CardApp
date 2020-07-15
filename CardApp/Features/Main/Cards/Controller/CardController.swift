@@ -14,7 +14,7 @@ class CardController: BaseViewController {
 
     // MARK: - variables
 
-    let viewModel = CardCollectionViewModel()
+    let viewModel: CardCollectionViewModel
 
     private let leftCellOffset: CGFloat = 20
 
@@ -51,6 +51,15 @@ class CardController: BaseViewController {
 
     // MARK: - initialization
 
+    init(viewModel: CardCollectionViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func initController() {
         super.initController()
 

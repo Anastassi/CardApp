@@ -23,9 +23,13 @@ class MainTabBarController: UITabBarController, TabBarViewDelegate {
     // MARK: - setup
 
     private func setUpControllers() {
+        let cardModel = CardCollectionViewModel()
+        let infoController = InfoController()
+        infoController.bindViewModel(cardModel)
+
         self.viewControllers = [
-            UINavigationController(rootViewController: CardController()),
-            UINavigationController(rootViewController: InfoController()),
+            UINavigationController(rootViewController: CardController(viewModel: cardModel)),
+            UINavigationController(rootViewController: infoController),
             UINavigationController(rootViewController: BookmarkController()),
             UINavigationController(rootViewController: SettingsController()),
             UINavigationController(rootViewController: FriendsController())
