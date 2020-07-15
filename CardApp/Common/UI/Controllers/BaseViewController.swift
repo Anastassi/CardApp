@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 class BaseViewController: UIViewController {
 
@@ -33,6 +34,8 @@ class BaseViewController: UIViewController {
             self.navigationController?.navigationBar.backItem?.title = " "
         }
     }
+
+    let disposeBag = DisposeBag()
 
     // MARK: - life cycle variables
 

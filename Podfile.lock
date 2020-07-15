@@ -2,14 +2,24 @@ PODS:
   - Alamofire (5.2.1)
   - AlamofireImage (4.1.0):
     - Alamofire (~> 5.1)
+  - Differentiator (4.0.1)
   - InfiniteLayout (0.4.2):
     - InfiniteLayout/Core (= 0.4.2)
   - InfiniteLayout/CocoaProxy (0.4.2)
   - InfiniteLayout/Core (0.4.2):
     - InfiniteLayout/CocoaProxy
+  - InfiniteLayout/Rx (0.4.2):
+    - InfiniteLayout/Core
+    - RxCocoa (~> 5)
+    - RxDataSources (~> 4)
+    - RxSwift (~> 5)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
@@ -19,6 +29,7 @@ DEPENDENCIES:
   - Alamofire (~> 5.0)
   - AlamofireImage (~> 4.1)
   - InfiniteLayout
+  - InfiniteLayout/Rx
   - RxCocoa (~> 5)
   - RxSwift (~> 5)
   - SnapKit (~> 5.0.0)
@@ -27,8 +38,10 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
+    - Differentiator
     - InfiniteLayout
     - RxCocoa
+    - RxDataSources
     - RxRelay
     - RxSwift
     - SnapKit
@@ -36,12 +49,14 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   InfiniteLayout: de51cfad9ed480a3e3a0af7d28242d3257c606d9
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 310a9f89a9d4d49a18f4c932b54ac8cbff756b09
+PODFILE CHECKSUM: 6205aa5a71bbc5bcff0eb868d2a54ebb2fb34d65
 
 COCOAPODS: 1.9.3

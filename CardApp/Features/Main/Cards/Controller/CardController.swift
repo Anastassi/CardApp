@@ -6,17 +6,22 @@
 //
 
 import InfiniteLayout
+import RxSwift
+import RxCocoa
+import RxDataSources
 
 class CardController: BaseViewController {
 
     // MARK: - variables
 
-    private var ringtones: [Ringtone] = []
+    private var ringtones: BehaviorRelay<[Ringtone]> = BehaviorRelay(value: [])
 
     private let leftCellOffset: CGFloat = 20
 
     private let cellSize: CGSize = CGSize(width: UIScreen.main.bounds.size.width * 0.8,
                                           height: UIScreen.main.bounds.size.height * 0.4)
+
+    private lazy var autoScroll = AutoScroll(configuration: AutoScrollConfiguration(interval: 2, scrollDirection: .right))
 
     // MARK: - gui variables
 
@@ -27,15 +32,12 @@ class CardController: BaseViewController {
         return layout
     }()
 
-    private lazy var collectionView: InfiniteCollectionView = {
-        let view =  InfiniteCollectionView(frame: CGRect.zero, collectionViewLayout: self.collectionLayout)
+    private lazy var collectionView: RxInfiniteCollectionView = {
+        let view = RxInfiniteCollectionView(frame: CGRect.zero, collectionViewLayout: self.collectionLayout)
         view.backgroundColor = UIColor.clear
         view.showsVerticalScrollIndicator = false
         view.showsHorizontalScrollIndicator = false
         view.isItemPagingEnabled = true
-
-        view.delegate = self
-        view.dataSource = self
 
         view.register(CardCollectionCell.self,
                       forCellWithReuseIdentifier: CardCollectionCell.identifier)
@@ -57,6 +59,8 @@ class CardController: BaseViewController {
             make.width.height.equalToSuperview()
             make.centerX.equalToSuperview()
         }
+
+        self.setupCollection()
     }
 
     // MARK: - life cycle
@@ -67,41 +71,37 @@ class CardController: BaseViewController {
         self.requestRingtones()
     }
 
+    // MARK: - setup
+
+    private func setupCollection() {
+        self.ringtones
+            .bind(to: self.collectionView.rx.items(cellIdentifier: CardCollectionCell.identifier,
+                                                   cellType: CardCollectionCell.self,
+                                                   infinite: true)) { row, element, cell in
+                                                    cell.set(model: element) }
+            .disposed(by: self.disposeBag)
+
+        self.collectionView.rx
+            .modelSelected(Ringtone.self)
+            .subscribe(onNext: { (ringtone) in
+                Alert.showAlert(message: ringtone.title,
+                                buttons: AlertButton(title: "Close", style: .default))
+            }).disposed(by: self.disposeBag)
+
+        self.autoScroll.setUp(colectionView: self.collectionView)
+    }
+
     // MARK: - request
 
     private func requestRingtones() {
         Net.sh.request(
             urlPath: NetUrlPath.topRingtones,
-            okHandler: { (ringtones: [Ringtone]) in
-                self.ringtones = ringtones
-                self.collectionView.reloadData()
+            okHandler: { [weak self] (ringtones: [Ringtone]) in
+                guard let self = self else { return }
+                self.ringtones.accept(ringtones)
         }, errorHandler: { error in
-            print(error.debugDescription)
+            Alert.showError(error: error)
         })
-    }
-}
-
-// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-
-extension CardController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.ringtones.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionCell.identifier,
-                                                      for: indexPath)
-        if let cell = cell as? CardCollectionCell,
-            let model = self.ringtones.get(by: self.collectionView.indexPath(from: indexPath).row) {
-            cell.set(model: model)
-        }
-        return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let model = self.ringtones.get(by: self.collectionView.indexPath(from: indexPath).row) else { return }
-        Alert.showAlert(message: model.title,
-                        buttons: AlertButton(title: "Close", style: .default))
     }
 }
 

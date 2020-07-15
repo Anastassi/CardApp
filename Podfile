@@ -11,6 +11,7 @@ target 'CardApp' do
   pod 'Alamofire', '~> 5.0'
   pod 'AlamofireImage', '~> 4.1'
   pod 'InfiniteLayout'
+  pod 'InfiniteLayout/Rx'
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
 
