@@ -29,7 +29,6 @@ class AutoScroll {
     private var timer: Timer?
 
     private var colectionView: UICollectionView?
-    private var currentItem: IndexPath = [0, 0]
 
     // MARK: - initialization
 
@@ -81,6 +80,8 @@ class AutoScroll {
         self.timer?.invalidate()
         self.timer = nil
     }
+
+    // MARK: - scroll 
 
     private func scrollToNext() {
         guard let collection = self.colectionView,

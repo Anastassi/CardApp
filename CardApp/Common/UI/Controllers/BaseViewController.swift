@@ -84,6 +84,7 @@ class BaseViewController: UIViewController {
         self.view.backgroundColor = .white
 
         self.view.addSubview(self.mainView)
+        
         self.mainView.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
             self.mainViewBottomConstraint = make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).constraint
