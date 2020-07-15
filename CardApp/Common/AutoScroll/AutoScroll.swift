@@ -28,7 +28,7 @@ class AutoScroll {
 
     private var timer: Timer?
 
-    private var colectionView: UICollectionView?
+    private weak var colectionView: UICollectionView?
 
     // MARK: - initialization
 
@@ -68,8 +68,8 @@ class AutoScroll {
     private func startTimer() {
         let timer = Timer(timeInterval: self.configuration.interval,
                            repeats: true,
-                           block: { (timer) in
-                            self.scrollToNext()
+                           block: { [weak self] (timer) in
+                            self?.scrollToNext()
         })
         RunLoop.current.add(timer, forMode: .common)
 
@@ -131,5 +131,10 @@ class AutoScroll {
         }
 
         return nil
+    }
+
+    deinit {
+        self.timer?.invalidate()
+        self.timer = nil
     }
 }
