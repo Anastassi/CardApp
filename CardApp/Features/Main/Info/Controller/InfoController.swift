@@ -37,12 +37,6 @@ class InfoController: BaseViewController {
         }
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        Interface.sh.pushVC(CardController(viewModel: CardCollectionViewModel()))
-    }
-
      // MARK: - binding
 
     func bindViewModel(_ viewModel: CardCollectionViewModel) {

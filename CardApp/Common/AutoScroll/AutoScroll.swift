@@ -12,6 +12,7 @@ import RxCocoa
 struct AutoScrollConfiguration {
     let interval: Double
     let scrollDirection: AuroScrollDirection
+    let infiniteMode: Bool
 }
 
 enum AuroScrollDirection {
@@ -87,8 +88,19 @@ class AutoScroll {
         guard let collection = self.colectionView,
             let currentFullIndex = self.getFullIndexPath() else { return }
 
-        guard let scrollDirection = (collection.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection else { return  }
+        guard let scrollDirection = (collection.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection,
+            let totalItems = self.colectionView?.numberOfItems(inSection: currentFullIndex.section) else { return }
 
+        if !configuration.infiniteMode {
+            switch self.configuration.scrollDirection {
+            case .left:
+                guard currentFullIndex.row > 0 else { return }
+            case .right:
+                guard totalItems - 1 > currentFullIndex.row else { return }
+            }
+        }
+
+        // FIXME: - fix left direction scrolling with infinite scroll enabling for first element ([0, 0])
         let nextRow = self.configuration.scrollDirection == .left
             ? currentFullIndex.row - 1
             : currentFullIndex.row + 1
@@ -124,8 +136,8 @@ class AutoScroll {
             let rect = collection.convert(attributes.frame, to: collection.superview)
             if rect.minX > 0,
                 rect.minY > 0,
-                rect.maxY < collection.frame.maxY,
-                rect.maxX < collection.frame.maxX {
+                rect.maxY <= collection.frame.maxY,
+                rect.maxX <= collection.frame.maxX {
                 return indexPath
             }
         }
@@ -135,6 +147,5 @@ class AutoScroll {
 
     deinit {
         self.timer?.invalidate()
-        self.timer = nil
     }
 }

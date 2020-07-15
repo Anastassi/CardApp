@@ -21,7 +21,9 @@ class CardController: BaseViewController {
     private let cellSize: CGSize = CGSize(width: UIScreen.main.bounds.size.width * 0.8,
                                           height: UIScreen.main.bounds.size.height * 0.4)
 
-    private lazy var autoScroll = AutoScroll(configuration: AutoScrollConfiguration(interval: 2, scrollDirection: .right))
+    private lazy var autoScroll = AutoScroll(configuration: AutoScrollConfiguration(interval: 2,
+                                                                                    scrollDirection: .right,
+                                                                                    infiniteMode: true))
 
     // MARK: - gui variables
 
