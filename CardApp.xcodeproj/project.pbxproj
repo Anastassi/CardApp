@@ -41,6 +41,7 @@
 		03018CEC24BECE9F00A87C49 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CEB24BECE9F00A87C49 /* Alert.swift */; };
 		03018CEE24BECEC500A87C49 /* AlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CED24BECEC500A87C49 /* AlertButton.swift */; };
 		03018CF124BED2AD00A87C49 /* AutoScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CF024BED2AD00A87C49 /* AutoScroll.swift */; };
+		03018CF424BEE45200A87C49 /* CardCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CF324BEE45200A87C49 /* CardCollectionViewModel.swift */; };
 		6E1F0D9068EFCB92A87F877F /* Pods_CardApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30823ED1F564E7BEE8D242C2 /* Pods_CardApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		03018CEB24BECE9F00A87C49 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		03018CED24BECEC500A87C49 /* AlertButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButton.swift; sourceTree = "<group>"; };
 		03018CF024BED2AD00A87C49 /* AutoScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScroll.swift; sourceTree = "<group>"; };
+		03018CF324BEE45200A87C49 /* CardCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewModel.swift; sourceTree = "<group>"; };
 		30823ED1F564E7BEE8D242C2 /* Pods_CardApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3CEB37427FB0D2A08EFFE1D /* Pods-CardApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardApp.debug.xcconfig"; path = "Target Support Files/Pods-CardApp/Pods-CardApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DC5B1AAF35286820A7F6C17A /* Pods-CardApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardApp.release.xcconfig"; path = "Target Support Files/Pods-CardApp/Pods-CardApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		03018CB524BE4FC900A87C49 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				03018CF224BEE3D300A87C49 /* Model */,
 				03018CB624BE4FCF00A87C49 /* Cards */,
 				03018CB724BE4FD700A87C49 /* Info */,
 				03018CBE24BE502600A87C49 /* Bookmark */,
@@ -396,6 +399,14 @@
 				03018CF024BED2AD00A87C49 /* AutoScroll.swift */,
 			);
 			path = AutoScroll;
+			sourceTree = "<group>";
+		};
+		03018CF224BEE3D300A87C49 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				03018CF324BEE45200A87C49 /* CardCollectionViewModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		1F2007955F8B39A4743852F0 /* Frameworks */ = {
@@ -560,6 +571,7 @@
 				03018CA724BE3EF900A87C49 /* TabBarCell.swift in Sources */,
 				03018CCB24BE61CA00A87C49 /* DefaultsManager.swift in Sources */,
 				03018CE624BE780D00A87C49 /* CardCollectionCell.swift in Sources */,
+				03018CF424BEE45200A87C49 /* CardCollectionViewModel.swift in Sources */,
 				03018CCD24BE625100A87C49 /* UserDefaultsWrapper.swift in Sources */,
 				03018CA524BE3EA100A87C49 /* TabBarTabType.swift in Sources */,
 				03018CB424BE4F5900A87C49 /* MainTabBarController.swift in Sources */,

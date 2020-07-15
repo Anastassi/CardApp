@@ -14,7 +14,7 @@ class CardController: BaseViewController {
 
     // MARK: - variables
 
-    private var ringtones: BehaviorRelay<[Ringtone]> = BehaviorRelay(value: [])
+    let viewModel = CardCollectionViewModel()
 
     private let leftCellOffset: CGFloat = 20
 
@@ -28,6 +28,10 @@ class CardController: BaseViewController {
     private lazy var collectionLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: self.leftCellOffset, bottom: 0, right: 0)
+        layout.minimumLineSpacing = self.leftCellOffset
+        layout.minimumInteritemSpacing = 0
+        layout.itemSize = self.cellSize
 
         return layout
     }()
@@ -60,7 +64,7 @@ class CardController: BaseViewController {
             make.centerX.equalToSuperview()
         }
 
-        self.setupCollection()
+        self.bindViewsToViewModel()
     }
 
     // MARK: - life cycle
@@ -73,8 +77,8 @@ class CardController: BaseViewController {
 
     // MARK: - setup
 
-    private func setupCollection() {
-        self.ringtones
+    private func bindViewsToViewModel() {
+        self.viewModel.ringtones
             .bind(to: self.collectionView.rx.items(cellIdentifier: CardCollectionCell.identifier,
                                                    cellType: CardCollectionCell.self,
                                                    infinite: true)) { row, element, cell in
@@ -83,7 +87,8 @@ class CardController: BaseViewController {
 
         self.collectionView.rx
             .modelSelected(Ringtone.self)
-            .subscribe(onNext: { (ringtone) in
+            .subscribe(onNext: { [weak self] (ringtone) in
+                self?.viewModel.set(selectedRingtone: ringtone)
                 Alert.showAlert(message: ringtone.title,
                                 buttons: AlertButton(title: "Close", style: .default))
             }).disposed(by: self.disposeBag)
@@ -98,29 +103,9 @@ class CardController: BaseViewController {
             urlPath: NetUrlPath.topRingtones,
             okHandler: { [weak self] (ringtones: [Ringtone]) in
                 guard let self = self else { return }
-                self.ringtones.accept(ringtones)
+                self.viewModel.set(ringtones: ringtones)
         }, errorHandler: { error in
             Alert.showError(error: error)
         })
-    }
-}
-
-//MARK: - UICollectionViewDelegateFlowLayout
-
-extension CardController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: self.leftCellOffset, bottom: 0, right: 0)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return self.leftCellOffset
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return self.cellSize
     }
 }

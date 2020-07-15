@@ -42,19 +42,19 @@ class AutoScroll {
     func setUp(colectionView: UICollectionView) {
         self.colectionView = colectionView
 
-
-
-//        colectionView.rx
-//            .itemSelected
-//            .subscribe(onNext: { [weak self] (indexPath) in
-//                self?.currentItem = indexPath
-//            })
-//            .disposed(by: self.disposeBag)
-
         self.startTimer()
 
         colectionView.rx
+            .willBeginDragging
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.stopTimer()
+            })
+            .disposed(by: self.disposeBag)
+
+        colectionView.rx
             .didEndDecelerating
+            .delay(.milliseconds(500), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
                 if self.timer == nil {
@@ -84,22 +84,28 @@ class AutoScroll {
 
     private func scrollToNext() {
         guard let collection = self.colectionView,
-            let nextIndex = self.getNextItemIndexToScroll() else { return }
-
-//        let indexPath = IndexPath(row: self.currentItem.row + 1,
-//                                  section: self.currentItem.section)
-//        collection.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-//        self.currentItem = indexPath
+            let currentFullIndex = self.getFullIndexPath() else { return }
 
         guard let scrollDirection = (collection.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection else { return  }
+
+        let nextRow = self.configuration.scrollDirection == .left
+            ? currentFullIndex.row - 1
+            : currentFullIndex.row + 1
+
         switch scrollDirection {
         case .horizontal:
             DispatchQueue.main.async {
-                collection.scrollToItem(at: nextIndex, at: .left, animated: true)
+                collection.scrollToItem(at: IndexPath(row: nextRow,
+                                                      section: currentFullIndex.section),
+                                        at: .centeredHorizontally,
+                                        animated: true)
             }
         case .vertical:
             DispatchQueue.main.async {
-                collection.scrollToItem(at: nextIndex, at: .top, animated: true)
+                collection.scrollToItem(at: IndexPath(row: nextRow,
+                                                      section: currentFullIndex.section),
+                                        at: .centeredVertically,
+                                        animated: true)
             }
         @unknown default:
             return
@@ -107,71 +113,22 @@ class AutoScroll {
 
     }
 
-    private func getNextItemIndexToScroll() -> IndexPath? {
+    private func getFullIndexPath() -> IndexPath? {
         guard let collection = self.colectionView else { return nil }
 
-        if let lastCell = getLastVisibleCell(),
-            let lastIndex = collection.indexPath(for: lastCell) {
-            if lastIndex.row == (collection.numberOfItems(inSection: 0) - 1) && collection.bounds.contains(lastCell.frame) {
-                return IndexPath(item: 0, section: 0)
+        let visibleIndexPaths = collection.indexPathsForVisibleItems
+
+        for indexPath in visibleIndexPaths {
+            guard let attributes = collection.layoutAttributesForItem(at: indexPath) else { continue }
+            let rect = collection.convert(attributes.frame, to: collection.superview)
+            if rect.minX > 0,
+                rect.minY > 0,
+                rect.maxY < collection.frame.maxY,
+                rect.maxX < collection.frame.maxX {
+                return indexPath
             }
         }
 
-        if let partialVisibleCell = checkForPartialVisibleCells() {
-            return collection.indexPath(for: partialVisibleCell)
-        } else {
-            guard let firstVisibleCell = getFirstVisbleCell(),
-                let firstVisibleIndex = collection.indexPath(for: firstVisibleCell) else { return nil }
-            let nextItem = (firstVisibleIndex.item + (collection.visibleCells.count)) % collection.numberOfItems(inSection: 0)
-            return IndexPath(item: nextItem, section: 0)
-        }
-    }
-
-    private func getFirstVisbleCell() -> UICollectionViewCell? {
-        guard let collection = self.colectionView else { return nil }
-
-        guard let scrollDirection = (collection.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection else { return nil }
-        switch scrollDirection {
-        case .horizontal:
-            let temp = collection.visibleCells.sorted(by: { $0.frame.minX < $1.frame.minX })
-            let firstRowCells =  temp.filter{ $0.frame.minX == temp[0].frame.minX }
-            return firstRowCells.sorted(by: { $0.frame.minY > $1.frame.minY }).first
-        case .vertical:
-            let temp = collection.visibleCells.sorted(by: { $0.frame.minY < $1.frame.minY })
-            let firstRowCells =  temp.filter{ $0.frame.minY == temp[0].frame.minY }
-            return firstRowCells.sorted(by: { $0.frame.minX < $1.frame.minX }).first
-        @unknown default:
-            return nil
-        }
-    }
-
-    private func getLastVisibleCell() -> UICollectionViewCell? {
-        guard let collection = self.colectionView,
-            let scrollDirection = (collection.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection else { return nil }
-        switch scrollDirection {
-        case .horizontal:
-            let temp = collection.visibleCells.sorted(by: {$0.frame.maxX > $1.frame.maxX})
-            let lastColumnsCells =  temp.filter{$0.frame.maxX == temp[0].frame.maxX}
-            return lastColumnsCells.sorted(by: {$0.frame.minY > $1.frame.minY}).first
-        case .vertical:
-            let temp = collection.visibleCells.sorted(by: {$0.frame.maxY > $1.frame.maxY})
-            let lastRowCells =  temp.filter{$0.frame.maxY == temp[0].frame.maxY}
-            return lastRowCells.sorted(by: {$0.frame.maxX > $1.frame.maxX}).first
-        @unknown default:
-            return nil
-        }
-    }
-
-    private func checkForPartialVisibleCells() -> UICollectionViewCell? {
-        guard let collection = self.colectionView else { return nil }
-
-        var partiallyVisibleCell: UICollectionViewCell?
-        for cell in collection.visibleCells {
-            if !collection.bounds.contains(cell.frame) {
-                partiallyVisibleCell = cell
-                break
-            }
-        }
-        return partiallyVisibleCell
+        return nil
     }
 }

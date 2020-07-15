@@ -23,6 +23,8 @@ class SettingsController: BaseViewController {
         return button
     }()
 
+    // MARK: - initialization
+
     override func initController() {
         super.initController()
 
