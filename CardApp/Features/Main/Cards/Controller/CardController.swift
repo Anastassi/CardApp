@@ -97,6 +97,12 @@ extension CardController: UICollectionViewDelegate, UICollectionViewDataSource {
         }
         return cell
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let model = self.ringtones.get(by: self.collectionView.indexPath(from: indexPath).row) else { return }
+        Alert.showAlert(message: model.title,
+                        buttons: AlertButton(title: "Close", style: .default))
+    }
 }
 
 //MARK: - UICollectionViewDelegateFlowLayout

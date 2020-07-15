@@ -38,6 +38,8 @@
 		03018CE024BE728500A87C49 /* Encodable+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CDF24BE728500A87C49 /* Encodable+Ex.swift */; };
 		03018CE324BE757F00A87C49 /* Ringtone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CE224BE757F00A87C49 /* Ringtone.swift */; };
 		03018CE624BE780D00A87C49 /* CardCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CE524BE780C00A87C49 /* CardCollectionCell.swift */; };
+		03018CEC24BECE9F00A87C49 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CEB24BECE9F00A87C49 /* Alert.swift */; };
+		03018CEE24BECEC500A87C49 /* AlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03018CED24BECEC500A87C49 /* AlertButton.swift */; };
 		6E1F0D9068EFCB92A87F877F /* Pods_CardApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30823ED1F564E7BEE8D242C2 /* Pods_CardApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		03018CDF24BE728500A87C49 /* Encodable+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Ex.swift"; sourceTree = "<group>"; };
 		03018CE224BE757F00A87C49 /* Ringtone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ringtone.swift; sourceTree = "<group>"; };
 		03018CE524BE780C00A87C49 /* CardCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionCell.swift; sourceTree = "<group>"; };
+		03018CEB24BECE9F00A87C49 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		03018CED24BECEC500A87C49 /* AlertButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButton.swift; sourceTree = "<group>"; };
 		30823ED1F564E7BEE8D242C2 /* Pods_CardApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3CEB37427FB0D2A08EFFE1D /* Pods-CardApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardApp.debug.xcconfig"; path = "Target Support Files/Pods-CardApp/Pods-CardApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DC5B1AAF35286820A7F6C17A /* Pods-CardApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardApp.release.xcconfig"; path = "Target Support Files/Pods-CardApp/Pods-CardApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 		03018C9224BE397B00A87C49 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				03018CEA24BECE8900A87C49 /* Alert */,
 				03018C9724BE39F700A87C49 /* UI */,
 				03018C9624BE39E400A87C49 /* Navigation */,
 				03018C9524BE39C400A87C49 /* Defaults */,
@@ -373,6 +378,15 @@
 			path = Celll;
 			sourceTree = "<group>";
 		};
+		03018CEA24BECE8900A87C49 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				03018CEB24BECE9F00A87C49 /* Alert.swift */,
+				03018CED24BECEC500A87C49 /* AlertButton.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		1F2007955F8B39A4743852F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -529,6 +543,7 @@
 				03018CAB24BE453200A87C49 /* TabBarView.swift in Sources */,
 				03018CD124BE62F600A87C49 /* UserDefaultsKey.swift in Sources */,
 				03018CE024BE728500A87C49 /* Encodable+Ex.swift in Sources */,
+				03018CEE24BECEC500A87C49 /* AlertButton.swift in Sources */,
 				03018CB024BE47F000A87C49 /* Array+Ex.swift in Sources */,
 				03018CA024BE3D0600A87C49 /* TabBarController.swift in Sources */,
 				03018CA724BE3EF900A87C49 /* TabBarCell.swift in Sources */,
@@ -540,6 +555,7 @@
 				03018CA924BE3F8400A87C49 /* TabBarCellModel.swift in Sources */,
 				03018CAE24BE45FE00A87C49 /* BaseView.swift in Sources */,
 				03018C7D24BE363300A87C49 /* AppDelegate.swift in Sources */,
+				03018CEC24BECE9F00A87C49 /* Alert.swift in Sources */,
 				03018CBA24BE4FEC00A87C49 /* CardController.swift in Sources */,
 				03018CD624BE64D000A87C49 /* BaseButton.swift in Sources */,
 				03018CD824BE6F1B00A87C49 /* Net.swift in Sources */,

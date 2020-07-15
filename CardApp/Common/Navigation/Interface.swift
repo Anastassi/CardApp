@@ -17,6 +17,15 @@ class Interface {
         return self.navController.tabBarView
     }
 
+    var topController: UIViewController? {
+        if let tabVC = self.navController.topViewController as? MainTabBarController,
+            let navController = tabVC.selectedViewController as? UINavigationController {
+            return navController.topViewController
+        } else {
+            return self.navController.topViewController
+        }
+    }
+
     private weak var window: UIWindow?
 
     // MARK: - init
